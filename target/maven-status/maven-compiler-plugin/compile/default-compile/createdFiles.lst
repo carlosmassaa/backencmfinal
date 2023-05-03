@@ -30,5 +30,6 @@ com\portfolio\cm\Security\Entity\UsuarioPrincipal.class
 com\portfolio\cm\Security\Controller\Mensaje.class
 com\portfolio\cm\Security\jwt\JwtProvider.class
 com\portfolio\cm\Security\jwt\JwtTokenFilter.class
+com\portfolio\cm\WebConfig.class
 com\portfolio\cm\Controller\CExperiencia.class
 com\portfolio\cm\Controller\PersonaController.class
