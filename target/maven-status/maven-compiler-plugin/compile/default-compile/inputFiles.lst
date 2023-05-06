@@ -11,9 +11,12 @@ C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Controller\CEducacion.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Controller\CExperiencia.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Controller\PersonaController.java
+C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Repository\Rhys.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\MainSecurity.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Repository\RExperiencia.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\Entity\Usuario.java
+C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Service\Shys.java
+C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Controller\CHys.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Service\ImpPersonaService.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Entity\Educacion.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Repository\REducacion.java
@@ -21,11 +24,13 @@ C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\Entity\UsuarioPrincipal.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\Enums\RolNombre.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\Service\RolService.java
+C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Entity\hys.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\jwt\JwtProvider.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\jwt\JwtTokenFilter.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\Controller\Mensaje.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Dto\dtoEducacion.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Interface\IPersonaService.java
+C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Dto\dtoHys.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Entity\Persona.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\Security\Controller\AuthController.java
 C:\Users\Admin\Documents\- Backend\backencmfinal\src\main\java\com\portfolio\cm\WebConfig.java
