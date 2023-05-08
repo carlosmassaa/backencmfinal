@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.cm.Security.Entity;
 
 import java.util.Collection;
@@ -7,16 +12,19 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+/**
+ *
+ * @author Usuario
+ */
+public class UsuarioPrincipal implements UserDetails {
 
-public class UsuarioPrincipal implements UserDetails{
-private String nombre;
-private String nombreUsuario;
-private String email;
-private String password;
-private Collection<? extends GrantedAuthority> authorities;
+    private String nombre;
+    private String nombreUsuario;
+    private String email;
+    private String password;
+    private Collection<? extends GrantedAuthority> authorities;
 
-//Constructor 
-
+    //Constructor
     public UsuarioPrincipal(String nombre, String nombreUsuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
@@ -24,16 +32,18 @@ private Collection<? extends GrantedAuthority> authorities;
         this.password = password;
         this.authorities = authorities;
     }
-        
-   public static UsuarioPrincipal build(Usuario usuario){
-       
-       List<GrantedAuthority> authorities = usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
-       return new UsuarioPrincipal(usuario.getNombre(),usuario.getNombreUsuario(),usuario.getEmail(),usuario.getPassword(),authorities);
-   }
+
+    public static UsuarioPrincipal build(Usuario usuario) {
+        List<GrantedAuthority> authorities = usuario.getRoles().stream()
+                .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors
+                .toList());
+        return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(),
+                 usuario.getPassword(), authorities);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-       return authorities;
+        return authorities;
     }
 
     @Override
@@ -42,13 +52,13 @@ private Collection<? extends GrantedAuthority> authorities;
     }
 
     public String getNombre() {
-        return password;
+        return nombre;
     }
-  
+
     public String getEmail() {
-        return password;
+        return email;
     }
-   
+
     @Override
     public String getUsername() {
         return nombreUsuario;
@@ -73,5 +83,5 @@ private Collection<? extends GrantedAuthority> authorities;
     public boolean isEnabled() {
         return true;
     }
-    
+
 }

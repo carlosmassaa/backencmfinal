@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.cm.Security.Service;
 
 import com.portfolio.cm.Security.Entity.Rol;
@@ -14,6 +18,7 @@ import org.springframework.stereotype.Service;
 public class RolService {
     @Autowired
     iRolRepository irolRepository;
+    
     public Optional<Rol> getByRolNombre(RolNombre rolNombre){
         return irolRepository.findByRolNombre(rolNombre);
     }
@@ -21,7 +26,4 @@ public class RolService {
     public void save(Rol rol){
         irolRepository.save(rol);
     }
-    
-    
-    
 }

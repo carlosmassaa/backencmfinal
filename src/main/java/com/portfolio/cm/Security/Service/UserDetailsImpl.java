@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.cm.Security.Service;
 
 import com.portfolio.cm.Security.Entity.Usuario;
@@ -11,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsImpl implements UserDetailsService{
- @Autowired
+    @Autowired
     UsuarioService usuarioService;
 
     @Override
@@ -19,5 +23,6 @@ public class UserDetailsImpl implements UserDetailsService{
         Usuario usuario = usuarioService.getByNombreUsuario(nombreUsuario).get();
         return UsuarioPrincipal.build(usuario);
     }
+    
     
 }

@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.cm.Security.jwt;
 
 import com.portfolio.cm.Security.Entity.UsuarioPrincipal;
@@ -9,60 +13,49 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
-    private final static Logger logger= LoggerFactory.getLogger(JwtProvider.class);
+    private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
     
-   @Value("${jwt.secret}")
+    @Value("${jwt.secret}")
     private String secret;
     @Value("${jwt.expiration}")
     private int expiration;
     
-   public String generateToken(Authentication authentication){
+    public String generateToken(Authentication authentication){
         UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
-        List<String> roles = usuarioPrincipal.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority).collect(Collectors.toList());
         return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
-                .claim("roles",roles)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(new Date().getTime() + expiration*1000))
-                .signWith(SignatureAlgorithm.HS512, secret.getBytes())
+                .setExpiration(new Date(new Date().getTime()+expiration*1000))
+                .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
-
     
-    public String getNombreUsuarioFromToken(String token){
-        return Jwts.parser().setSigningKey(secret.getBytes()).parseClaimsJws(token).getBody().getSubject();
+    public String getNombreUSuarioFromToken(String token){
+        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
     }
-
     
     public boolean validateToken(String token){
         try{
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
-        } catch (MalformedJwtException e){
-            logger.error("Tokern mal formado");
+        }catch (MalformedJwtException e){
+            logger.error("Token mal formado");
         }catch (UnsupportedJwtException e){
             logger.error("Token no soportado");
         }catch (ExpiredJwtException e){
-            logger.error("Toke expirado");
+            logger.error("Token expirado");
         }catch (IllegalArgumentException e){
             logger.error("Token vacio");
         }catch (SignatureException e){
-            logger.error("Firma no valida");
+            logger.error("Firma no válida");
         }
         return false;
-        
     }
-    
 }
-

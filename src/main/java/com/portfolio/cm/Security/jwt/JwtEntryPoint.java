@@ -1,6 +1,9 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.cm.Security.jwt;
-
 
 
 import java.io.IOException;
@@ -15,14 +18,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtEntryPoint implements AuthenticationEntryPoint{
-    private final static Logger logger= LoggerFactory.getLogger(JwtEntryPoint.class);
+    private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        logger.error("Falló el metodo Commence");
+        logger.error("Falló el metodo commence ");
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
-    
     
     
 }

@@ -1,18 +1,23 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.cm.Security.Dto;
 
 import javax.validation.constraints.NotBlank;
 
-
+/**
+ *
+ * @author Usuario
+ */
 public class LoginUsuario {
-
-@NotBlank
-private String nombreUsuario;
-@NotBlank
-private String password;
+    @NotBlank
+    private String nombreUsuario;
+    @NotBlank
+    private String password;
     
-
-//Getter and Setter
+    //Getter & Setter
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -29,6 +34,5 @@ private String password;
     public void setPassword(String password) {
         this.password = password;
     }
-
-
+    
 }
